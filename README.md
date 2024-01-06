@@ -50,6 +50,6 @@
 1. React Router DOM
 
 - index parameter for home route or "/" (App.tsx)
-- page with repatative component / Layout can be nested under route component wihtout path.
+- page with repatative component / Layout can be nested under route component wihtout path. using OUTLET component
 
 2. Use index.ts to work with multiple exports
