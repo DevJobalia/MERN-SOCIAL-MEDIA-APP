@@ -2,7 +2,6 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { Link } from "react-router-dom";
-import { createUserAccount } from "@/lib/appwrite/api";
 
 import { useToast } from "@/components/ui/use-toast";
 import {
@@ -18,9 +17,13 @@ import { Button } from "@/components/ui/button";
 
 import { SignupSchema } from "@/lib/validation";
 import Loader from "@/components/shared/Loader";
+import { useCreateUserAccountMutation } from "@/lib/react-query/queriesAndMutation";
 
 const SignupForm = () => {
   const { toast } = useToast();
+
+  const { mutateAsync: createUserAccount, isLoading: isCreatingUser } =
+    useCreateUserAccountMutation();
 
   // 1. Define your form.
   const form = useForm<z.infer<typeof SignupSchema>>({
@@ -43,7 +46,7 @@ const SignupForm = () => {
     }
     // const session = await signInAccount()
   }
-  const isLoading = false;
+
   return (
     <Form {...form}>
       <div className="sm:w-420 flex-center flex-col">
@@ -117,7 +120,7 @@ const SignupForm = () => {
           />
 
           <Button type="submit" className="shad-button_primary">
-            {isLoading ? (
+            {isCreatingUser ? (
               <div className="flex-center gap-2">
                 <Loader /> Loading...
               </div>

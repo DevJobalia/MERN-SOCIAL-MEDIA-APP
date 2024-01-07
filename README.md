@@ -22,7 +22,7 @@
 4. REACT QUERY
 5. React Context API
 6. React Router -> Outlet
-7. React Query / Tanstack Query
+7. React Query / Tanstack Query: To simplify data fetching + mutation, with benifits of caching, infinite scroll and more out of the box
 
 - Auto caching
 - Refetching
