@@ -52,4 +52,10 @@
 - index parameter for home route or "/" (App.tsx)
 - page with repatative component / Layout can be nested under route component wihtout path. using OUTLET component
 
-2. Use index.ts to work with multiple exports
+2. File Structure:
+
+- Use index.ts to work with multiple exports
+- Keep external import at top and inProject import + ui ele. at bottom
+
+3. Shadcn for creating form. Which has built in react-hook-form with zod support.
+4.
