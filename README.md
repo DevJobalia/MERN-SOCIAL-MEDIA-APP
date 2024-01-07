@@ -1,3 +1,5 @@
+2:06:00
+
 ## TECH STACK
 
 1. REACT

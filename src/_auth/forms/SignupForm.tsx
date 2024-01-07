@@ -1,7 +1,7 @@
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 import { useToast } from "@/components/ui/use-toast";
 import {
@@ -21,13 +21,16 @@ import {
   useCreateUserAccount,
   useSignInAccount,
 } from "@/lib/react-query/queriesAndMutation";
+import { useUserContext } from "@/context/AuthContext";
 
 const SignupForm = () => {
   const { toast } = useToast();
+  const navigate = useNavigate();
+  const { checkAuthUser, isLoading: isUserLoading } = useUserContext();
 
-  const { mutateAsync: createUserAccount, isLoading: isCreatingUser } =
+  const { mutateAsync: createUserAccount, isPending: isCreatingUser } =
     useCreateUserAccount();
-  const { mutateAsync: signInAccount, isLoading: isSigningIn } =
+  const { mutateAsync: signInAccount, isPending: isSigningIn } =
     useSignInAccount();
 
   // 1. Define your form.
@@ -47,6 +50,8 @@ const SignupForm = () => {
 
     const newUser = await createUserAccount(values);
     if (!newUser) {
+      console.log("PROBLEM 1");
+
       return toast({ title: "Sign up failed, Please try again" });
     }
     const session = await signInAccount({
@@ -54,6 +59,15 @@ const SignupForm = () => {
       password: values.password,
     });
     if (!session) {
+      console.log("PROBLEM 2");
+      return toast({ title: "Sign in failed. Please try again" });
+    }
+
+    const isLoggedIn = await checkAuthUser();
+    if (isLoggedIn) {
+      form.reset();
+      navigate("/");
+    } else {
       return toast({ title: "Sign in failed. Please try again" });
     }
   }
