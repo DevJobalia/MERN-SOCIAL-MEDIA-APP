@@ -32,6 +32,8 @@ const SignupForm = () => {
 
   // 2. Define a submit handler.
   async function onSubmit(values: z.infer<typeof SignupSchema>) {
+    console.log(values);
+
     const newUser = await createUserAccount(values);
     console.log(newUser);
   }
