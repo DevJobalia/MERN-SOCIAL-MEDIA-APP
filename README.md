@@ -69,6 +69,11 @@
 - group + group-hover: :-
 - whitespace: no-wrap
 
+5. React Query:
+
+- useMutation
+- useQueryClient: example it invalidates/prevents to get recent post from cache. Always recall no cache storing for freshness
+
 # Ref
 
 [JSM](https://www.youtube.com/watch?v=_W3R2VwRyF4)
