@@ -67,6 +67,7 @@
 4. Tailwind
 
 - group + group-hover: :-
+- whitespace: no-wrap
 
 # Ref
 
