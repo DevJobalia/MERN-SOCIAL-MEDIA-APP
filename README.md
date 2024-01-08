@@ -52,7 +52,11 @@
 1. React Router DOM
 
 - index parameter for home route or "/" (App.tsx)
-- page with repatative component / Layout can be nested under route component wihtout path. using OUTLET component
+- Working with Outlet: page with repatative component / Layout can be nested under route component wihtout path.
+  Similar to children
+- Working with NavLink
+- useLocation
+- - and :id in route
 
 2. File Structure:
 
@@ -60,4 +64,10 @@
 - Keep external import at top and inProject import + ui ele. at bottom
 
 3. Shadcn for creating form. Which has built in react-hook-form with zod support.
-4.
+4. Tailwind
+
+- group + group-hover: :-
+
+# Ref
+
+[JSM](https://www.youtube.com/watch?v=_W3R2VwRyF4)
