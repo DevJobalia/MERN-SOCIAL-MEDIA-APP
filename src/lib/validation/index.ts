@@ -15,3 +15,10 @@ export const SigninSchema = z.object({
     .string()
     .min(8, { message: "Password must be atleast 8 characters" }),
 });
+
+export const PostSchema = z.object({
+  caption: z.string().min(5).max(22000),
+  file: z.custom<File[]>(),
+  location: z.string().min(2).max(100),
+  tags: z.string(),
+});
