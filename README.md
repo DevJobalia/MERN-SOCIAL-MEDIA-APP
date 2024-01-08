@@ -74,6 +74,10 @@
 - useMutation
 - useQueryClient: example it invalidates/prevents to get recent post from cache. Always recall no cache storing for freshness
 
+6. Rename object element
+   `const {data:posts isPending:isPostLoading, isError:isErrorPosts}`
+   Here `data` can be accessed through naming `posts`
+
 # Ref
 
 [JSM](https://www.youtube.com/watch?v=_W3R2VwRyF4)

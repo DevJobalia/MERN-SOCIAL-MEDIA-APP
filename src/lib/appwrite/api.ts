@@ -1,6 +1,6 @@
 import { INewUser, INewPost } from "@/types";
 import { ID, Query } from "appwrite";
-import { account, appwriteConfig, avatars, databases } from "./config";
+import { account, appwriteConfig, avatars, databases, storage } from "./config";
 
 export async function createUserAccount(user: INewUser) {
   try {
@@ -90,7 +90,8 @@ export const createPost = async (post: INewPost) => {
     const uploadedFile = await uploadFile(post.file[0]);
     if (!uploadedFile) throw Error;
     // get file url
-    const fileUrl = getFilePreview(uploadFile.$id);
+    const fileUrl = await getFilePreview(uploadedFile.$id);
+    console.log("imageurl", fileUrl);
 
     if (!fileUrl) {
       await deleteFile(uploadedFile.$id);
@@ -137,7 +138,7 @@ export async function uploadFile(file: File) {
   }
 }
 
-export async function getFilePreview(fileId: string) {
+export function getFilePreview(fileId: string) {
   try {
     const fileUrl = storage.getFilePreview(
       appwriteConfig.storageId,
@@ -160,4 +161,14 @@ export async function deleteFile(fileId: string) {
   } catch (error) {
     console.log(error);
   }
+}
+
+export async function getRecentPosts() {
+  const posts = await databases.listDocuments(
+    appwriteConfig.databaseId,
+    appwriteConfig.postCollectionId,
+    [Query.orderDesc("$createdAt"), Query.limit(20)]
+  );
+  if (!posts) throw Error;
+  return posts;
 }
