@@ -68,6 +68,8 @@ export async function getCurrentUser() {
       appwriteConfig.userCollectionId,
       [Query.equal("accountId", currentAccount.$id)]
     );
+    console.log("currentUser", currentUser);
+
     if (!currentUser) throw Error;
     return currentUser.documents[0];
   } catch (error) {
@@ -171,4 +173,51 @@ export async function getRecentPosts() {
   );
   if (!posts) throw Error;
   return posts;
+}
+
+export async function likePost(postId: string, likesArray: string[]) {
+  try {
+    const updatedPost = await databases.updateDocument(
+      appwriteConfig.databaseId,
+      appwriteConfig.postCollectionId,
+      postId,
+      { likes: likesArray }
+    );
+    if (!updatedPost) throw Error;
+    return updatedPost;
+  } catch (error) {
+    console.log(error);
+  }
+}
+export async function savePost(userId: string, postId: string) {
+  try {
+    console.log("post", userId, postId);
+
+    const updatedPost = await databases.createDocument(
+      appwriteConfig.databaseId,
+      appwriteConfig.saveCollectionId,
+      ID.unique(),
+      { users: userId, post: postId }
+    );
+    console.log("appw", updatedPost);
+
+    if (!updatedPost) throw Error;
+    return updatedPost;
+  } catch (error) {
+    console.log(error);
+  }
+}
+
+export async function deleteSavedPost(savedRecordId: string) {
+  try {
+    const statusCode = await databases.deleteDocument(
+      appwriteConfig.databaseId,
+      appwriteConfig.saveCollectionId,
+      savedRecordId
+    );
+    if (!statusCode) throw Error;
+    return { status: "ok" };
+  } catch (error) {
+    console.log(error);
+  }
 }

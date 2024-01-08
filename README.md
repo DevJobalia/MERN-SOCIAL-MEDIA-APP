@@ -71,12 +71,15 @@
 
 5. React Query:
 
-- useMutation
+- useMutation: make changes
 - useQueryClient: example it invalidates/prevents to get recent post from cache. Always recall no cache storing for freshness
+- useQuery
 
 6. Rename object element
    `const {data:posts isPending:isPostLoading, isError:isErrorPosts}`
    Here `data` can be accessed through naming `posts`
+
+7. e.stopPropagation: Prevent parent link to work
 
 # Ref
 
