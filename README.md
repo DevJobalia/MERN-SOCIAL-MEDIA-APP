@@ -56,7 +56,7 @@
   Similar to children
 - Working with NavLink
 - useLocation
-- - and :id in route
+- usePArams for :id in route
 
 2. File Structure:
 
