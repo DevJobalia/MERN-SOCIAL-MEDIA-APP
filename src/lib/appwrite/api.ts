@@ -236,10 +236,11 @@ export async function getPostById(postId: string) {
 }
 
 export const updatePost = async (post: IUpdatePost) => {
-  console.log("update", post);
-
   const hasFileToUpdate = post.file.length > 0;
   try {
+    // DELETE OLD IMG
+    await deleteFile(post.imageId);
+
     let image = {
       imageUrl: post.imageUrl,
       imageId: post.imageId,

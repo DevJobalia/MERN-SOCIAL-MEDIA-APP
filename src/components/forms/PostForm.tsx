@@ -54,6 +54,7 @@ const PostForm = ({ action, post }: PostFormProps) => {
   // 2. Define a submit handler.
   async function onSubmit(values: z.infer<typeof PostSchema>) {
     if (post && action == "Update") {
+      toast({ title: "File", description: `${values.file}` });
       const updatedPost = await updatePost({
         ...values,
         postId: post.$id,
