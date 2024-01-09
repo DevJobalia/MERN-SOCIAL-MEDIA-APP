@@ -89,12 +89,12 @@
 
 # LEFT
 
-- infinite load
 - PEOPLE PAGE
 - SAVED PAGE
 - USER PAGE
 - EDIT PROFILE
 - DEPLOYMENT
+- infinite load Users & Profile pages.
 
 # Ref
 

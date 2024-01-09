@@ -8,6 +8,7 @@ import {
   useGetPosts,
 } from "@/lib/react-query/queriesAndMutation";
 import { useEffect } from "react";
+import Rightbar from "@/components/shared/Rightbar";
 
 const Home = () => {
   const { ref, inView } = useInView();
@@ -56,6 +57,7 @@ const Home = () => {
           </div>
         )}
       </div>
+      <Rightbar />
     </div>
   );
 };

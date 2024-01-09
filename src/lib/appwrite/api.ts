@@ -333,3 +333,20 @@ export async function searchPosts(searchTerm: string) {
     console.log(error);
   }
 }
+
+// CUSTOM
+export async function getUsers() {
+  try {
+    const queries: any[] = [Query.orderDesc("$updatedAt"), Query.limit(5)];
+
+    const users = await databases.listDocuments(
+      appwriteConfig.databaseId,
+      appwriteConfig.userCollectionId,
+      queries
+    );
+    if (!users) throw Error;
+    return users;
+  } catch (error) {
+    console.log(error);
+  }
+}
