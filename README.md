@@ -76,6 +76,7 @@
 - useQuery: fetch data
 - pass id in queryKey to differentiate similar ones
 - useQuery + enabled: If same id don't refectch. If diff then refetch
+- useInfiniteQuery + Pagination
 
 6. Rename object element
    `const {data:posts isPending:isPostLoading, isError:isErrorPosts}`
@@ -83,7 +84,7 @@
 
 7. e.stopPropagation: Prevent parent link to work
 8. !!: Not not operator
-9.
+9. Debouncing: To prevent exhaustive use of resources in search func.. Prevent searching everytime change in input char. Hence make a settimeout function
 
 # Ref
 
