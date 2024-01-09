@@ -1,5 +1,5 @@
 import { useGetUsers } from "@/lib/react-query/queriesAndMutation";
-import React from "react";
+
 import Loader from "./Loader";
 import { Button } from "../ui/button";
 
