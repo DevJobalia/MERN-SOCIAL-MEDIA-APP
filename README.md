@@ -87,8 +87,9 @@
 9. Debouncing: To prevent exhaustive use of resources in search func.. Prevent searching everytime change in input char. Hence make a settimeout function
 10. useEffect above all conditional render
 
-LEFT
+# LEFT
 
+- infinite load
 - PEOPLE PAGE
 - SAVED PAGE
 - USER PAGE
