@@ -85,6 +85,15 @@
 7. e.stopPropagation: Prevent parent link to work
 8. !!: Not not operator
 9. Debouncing: To prevent exhaustive use of resources in search func.. Prevent searching everytime change in input char. Hence make a settimeout function
+10. useEffect above all conditional render
+
+LEFT
+
+- PEOPLE PAGE
+- SAVED PAGE
+- USER PAGE
+- EDIT PROFILE
+- DEPLOYMENT
 
 # Ref
 
