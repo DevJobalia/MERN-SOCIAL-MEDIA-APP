@@ -9,7 +9,12 @@ const AllUsers = () => {
   }
   return (
     <div className="flex flex-col px-6 py-10  ">
-      <h2 className="h3-bold md:h2-bold w-full mb-5">Top Creators</h2>
+      <div className="m max-w-5xl flex-start gap-3 justify-start w-full">
+        <img src="/assets/icons/people.svg" alt="icon" width={36} height={36} />
+
+        <h2 className="h3-bold md:h2-bold w-full mb-5">Top Creators</h2>
+      </div>
+
       {/* square */}
       <div className="grid grid-cols-3  gap-5">
         {users?.documents.map((user) => (

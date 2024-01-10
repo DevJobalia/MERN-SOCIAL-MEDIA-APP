@@ -337,7 +337,7 @@ export async function searchPosts(searchTerm: string) {
 // CUSTOM
 export async function getUsers() {
   try {
-    const queries: any[] = [Query.orderDesc("$updatedAt"), Query.limit(5)];
+    const queries: any[] = [Query.orderDesc("$updatedAt"), Query.limit(10)];
 
     const users = await databases.listDocuments(
       appwriteConfig.databaseId,
@@ -346,6 +346,28 @@ export async function getUsers() {
     );
     if (!users) throw Error;
     return users;
+  } catch (error) {
+    console.log(error);
+  }
+}
+
+export async function getSavedPosts(userId: string) {
+  try {
+    const queries: any[] = [
+      Query.orderDesc("$updatedAt"),
+      Query.equal("users", userId),
+    ];
+
+    const saves = await databases.listDocuments(
+      appwriteConfig.databaseId,
+      appwriteConfig.saveCollectionId,
+      queries
+    );
+    if (!saves) throw Error;
+
+    console.log(saves);
+    return saves;
+    // const query2:any[] = [Query.orderDesc("$updatedAt"), Query.equal("$id", userId)];
   } catch (error) {
     console.log(error);
   }
