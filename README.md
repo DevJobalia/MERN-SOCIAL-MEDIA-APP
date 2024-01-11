@@ -87,10 +87,9 @@
 
 # LEFT
 
-- PEOPLE PAGE
-- SAVED PAGE
 - USER PAGE
 - EDIT PROFILE
+- related post
 - DEPLOYMENT
 - infinite load Users & Profile pages.
 
