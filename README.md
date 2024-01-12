@@ -51,7 +51,9 @@
 
 - index parameter for home route or "/" (App.tsx)
 - Working with Outlet: page with repatative component / Layout can be nested under route component wihtout path.
-  Similar to children
+  - In app.tsx, Used to reuse component as parent
+  - Impressed by diff. uses case in profile.tsx
+    Similar to children
 - Working with NavLink
 - useLocation
 - usePArams for :id in route
@@ -87,10 +89,10 @@
 
 # LEFT
 
-- USER PAGE
 - EDIT PROFILE
 - related post
 - DEPLOYMENT
+- edit user + create post right bar.
 - infinite load Users & Profile pages.
 
 # Ref

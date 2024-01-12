@@ -11,6 +11,8 @@ export type IUpdateUser = {
   imageId: string;
   imageUrl: URL | string;
   file: File[];
+  username: string;
+  email: string;
 };
 
 export type INewPost = {
