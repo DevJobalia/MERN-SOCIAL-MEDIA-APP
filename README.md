@@ -4,32 +4,28 @@
 2. TAILWIND
    2.1 tailwindcss-animate
 3. APPWRITE: Firebase alternative, To implement backend.
-   _Services:_
-
-- Auth
-- Database
-- Functions
-- Storage
-  _Features:_
-- Easy Server Setup
-- Secure
-- User Auth
-- Scaling
-- Secure file manage and storage
-- Optimized API Performance
-- Easy and Fast to implement
-
+   i. _Services:_
+      - Auth
+      - Database
+      - Functions
+      - Storage
+  ii. _Features:_
+      - Easy Server Setup
+      - Secure
+      - User Auth
+      - Scaling
+      - Secure file manage and storage
+      - Optimized API Performance
+      - Easy and Fast to implement
 4. REACT QUERY
 5. React Context API
 6. React Router -> Outlet
 7. React Query / Tanstack Query: To simplify data fetching + mutation, with benifits of caching, infinite scroll and more out of the box
-
-- Auto caching
-- Refetching
-- Parallel queries
-- First class mutations
-- Loading, state management
-
+   - Auto caching
+   - Refetching
+   - Parallel queries
+   - First class mutations
+   - Loading, state management
 8. Shadcn
 9. Typescript
 
