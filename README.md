@@ -85,8 +85,8 @@
 
 # LEFT
 
-- EDIT PROFILE
-[x] related post
-[x] DEPLOYMENT
-[x] edit user + create post right bar.
-[x] infinite load Users & Profile pages.
+- [ ] EDIT PROFILE
+- [x] related post
+- [x] DEPLOYMENT
+- [x] edit user + create post right bar.
+- [x] infinite load Users & Profile pages.
