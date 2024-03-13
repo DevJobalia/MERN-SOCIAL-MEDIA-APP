@@ -90,11 +90,7 @@
 # LEFT
 
 - EDIT PROFILE
-- related post
-- DEPLOYMENT
-- edit user + create post right bar.
-- infinite load Users & Profile pages.
-
-# Ref
-
-[JSM](https://www.youtube.com/watch?v=_W3R2VwRyF4)
+[x] related post
+[x] DEPLOYMENT
+[x] edit user + create post right bar.
+[x] infinite load Users & Profile pages.
